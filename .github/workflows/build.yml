@@ -18,7 +18,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Make gradlew executable
-        run: chmod -x .\gradlew.bat
+        run: chmod -x .\gradlew
 
       - name: Execute Gradle build
         run: .\gradlew shadowJar
