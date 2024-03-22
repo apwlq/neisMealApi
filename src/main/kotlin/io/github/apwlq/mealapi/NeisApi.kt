@@ -40,13 +40,13 @@ class NeisApi private constructor(
         return schools
     }
 
-    fun getMealsByDay(day: LocalDate, scCode: String, schoolCode: String, includeKcal: Boolean = false): Meal {
+    fun getMealsByDay(day: String, scCode: String, schoolCode: String, includeKcal: Boolean = false): Meal {
         val formattedDate = day.toString().replace("-", "")
         val document = parseXmlFromUrl("$mealHost?ATPT_OFCDC_SC_CODE=$scCode&SD_SCHUL_CODE=$schoolCode&MLSV_YMD=$formattedDate")
         return if (includeKcal) getMealKcal(document) else getMeal(document)
     }
 
-    fun getMealsByDay(day: LocalDate, scCode: String, schoolCode: String, apiKey: String,includeKcal: Boolean = false): Meal {
+    fun getMealsByDay(day: String, scCode: String, schoolCode: String, apiKey: String,includeKcal: Boolean = false): Meal {
         val formattedDate = day.toString().replace("-", "")
         val document = parseXmlFromUrl("$mealHost?ATPT_OFCDC_SC_CODE=$scCode&SD_SCHUL_CODE=$schoolCode&MLSV_YMD=$formattedDate&KEY=$apiKey")
         return if (includeKcal) getMealKcal(document) else getMeal(document)
