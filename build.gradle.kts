@@ -1,5 +1,5 @@
 group = "io.github.apwlq.mealapi"
-version = "2.0-Release"
+version = "2.1-Release"
 
 buildscript {
     repositories {
@@ -43,5 +43,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(11)
 }
