@@ -1,5 +1,5 @@
 group = "io.github.apwlq.mealapi"
-version = "2.1-Release"
+version = "2.2-Release"
 
 buildscript {
     repositories {
