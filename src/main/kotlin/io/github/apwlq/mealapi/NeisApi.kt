@@ -112,7 +112,7 @@ class NeisApi private constructor(
     }
 
     private fun parseMenus(menus: String): MutableList<String> {
-        return menus.split("<br/>").map { it.replace("\\(\\d+(\\.\\d+)*\\)|\\([ㄱ-힇]+\\d*\\)|[a-zA-Z]|[*^%$#@!_ ]".toRegex(), "").replace("[,-/]".toRegex(), "&").trim() }.toMutableList()
+        return menus.split("<br/>").map { it.replace("\\(\\d+(\\.\\d+)*\\)|\\([ㄱ-힇]+\\d*\\)|[a-zA-Z]|[*^%$#@!_ ]".toRegex(), "").replace("[,-/+]".toRegex(), "&").trim() }.toMutableList()
     }
 
     data class Builder(
